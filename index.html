@@ -177,7 +177,48 @@
           <a href="#home" class="nav-link active">Home</a>
           <a href="#story" class="nav-link">Heritage</a>
           <a href="#experience" class="nav-link">Atmosphere</a>
-          <a href="#menu" class="nav-link">3D Menu</a>
+          <div class="nav-item-dropdown-wrap">
+            <a href="#menu" class="nav-link nav-link-has-dropdown">
+              <span>3D Menu</span>
+              <svg class="nav-chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <!-- Rich Hover Dropdown Preview on Desktop -->
+            <div class="desktop-nav-dropdown" role="region" aria-label="Menu Highlights">
+              <div class="dropdown-glow-aura"></div>
+              <div class="dropdown-inner">
+                <div class="dropdown-category-col">
+                  <span class="dropdown-cat-badge">Signature Highlights</span>
+                  <a href="#menu" class="dropdown-menu-item" data-filter="korean">
+                    <span class="dropdown-item-emoji">🍜</span>
+                    <div class="dropdown-item-text">
+                      <strong>Korean Soul</strong>
+                      <small>Bibimbap, Spicy Ramyeon, Bulgogi</small>
+                    </div>
+                  </a>
+                  <a href="#menu" class="dropdown-menu-item" data-filter="tribal">
+                    <span class="dropdown-item-emoji">🥟</span>
+                    <div class="dropdown-item-text">
+                      <strong>Indigenous Roots</strong>
+                      <small>Madua Ragi Momos, Mandu Soup</small>
+                    </div>
+                  </a>
+                  <a href="#menu" class="dropdown-menu-item" data-filter="beverages">
+                    <span class="dropdown-item-emoji">☕</span>
+                    <div class="dropdown-item-text">
+                      <strong>Artisan Cafe Brews</strong>
+                      <small>Filter Coffee, Berry Iced Tea</small>
+                    </div>
+                  </a>
+                </div>
+                <div class="dropdown-promo-card">
+                  <div class="promo-badge">Live 3D View</div>
+                  <h6>Handcrafted Flavors</h6>
+                  <p>Rotate, inspect & order authentic Korean and tribal delicacies.</p>
+                  <a href="#menu" class="dropdown-explore-link">Explore 3D Menu →</a>
+                </div>
+              </div>
+            </div>
+          </div>
           <a href="#gallery" class="nav-link">Gallery</a>
           <a href="#location" class="nav-link">Find Us</a>
           <a href="#contact" class="nav-link">Contact</a>
@@ -223,21 +264,110 @@
       </div>
     </header>
 
-    <!-- Mobile Navigation Slide Overlay -->
-    <div id="mobile-nav-overlay" class="mobile-nav-overlay">
-      <a href="#home" class="mobile-nav-link">Home</a>
-      <a href="#story" class="mobile-nav-link">Our Heritage</a>
-      <a href="#experience" class="mobile-nav-link">Atmosphere</a>
-      <a href="#menu" class="mobile-nav-link">3D Menu</a>
-      <a href="#gallery" class="mobile-nav-link">Visual Gallery</a>
-      <a href="#location" class="mobile-nav-link">Location & Map</a>
-      <a href="#contact" class="mobile-nav-link">Contact</a>
-      <button
-        class="btn-primary open-reserve-modal-btn"
-        style="margin-top: 20px"
-      >
-        Reserve a Table
-      </button>
+    <!-- Mobile Navigation Slide Overlay (Dark Luxury Restaurant Drawer) -->
+    <div id="mobile-nav-overlay" class="mobile-nav-overlay" aria-hidden="true">
+      <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+      <div class="mobile-nav-sheet">
+        <!-- Top Drawer Header -->
+        <div class="mobile-nav-header">
+          <div class="mobile-nav-brand">
+            <img src="assets/logo/logo.svg" alt="Cafe De Arte" class="mobile-nav-logo" />
+            <div class="mobile-nav-brand-text">
+              <span class="mobile-nav-sub">KOREAN SOUL • TRIBAL ROOTS</span>
+              <span class="mobile-nav-status">🟢 Open • Nagra Toli, Ranchi</span>
+            </div>
+          </div>
+          <button id="mobile-nav-close-btn" class="mobile-nav-close-btn" aria-label="Close navigation menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Navigation Links with Numbers and Subtitles -->
+        <nav class="mobile-nav-list" role="navigation" aria-label="Mobile Navigation Links">
+          <a href="#home" class="mobile-nav-item active">
+            <span class="nav-item-num">01</span>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Home</span>
+              <span class="nav-item-desc">3D Culinary Stage & Intro</span>
+            </div>
+            <svg class="nav-item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="#story" class="mobile-nav-item">
+            <span class="nav-item-num">02</span>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Our Heritage</span>
+              <span class="nav-item-desc">Anju Toppo & Ancestral Roots</span>
+            </div>
+            <svg class="nav-item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="#experience" class="mobile-nav-item">
+            <span class="nav-item-num">03</span>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Atmosphere</span>
+              <span class="nav-item-desc">Rustic Bistro & Warm Fireplace</span>
+            </div>
+            <svg class="nav-item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="#menu" class="mobile-nav-item">
+            <span class="nav-item-num">04</span>
+            <div class="nav-item-text">
+              <span class="nav-item-title">3D Interactive Menu</span>
+              <span class="nav-item-desc">Bibimbap, Ramyeon & Ragi Momos</span>
+            </div>
+            <span class="nav-item-badge">Popular</span>
+            <svg class="nav-item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="#gallery" class="mobile-nav-item">
+            <span class="nav-item-num">05</span>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Visual Gallery</span>
+              <span class="nav-item-desc">Culinary Art & Guest Moments</span>
+            </div>
+            <svg class="nav-item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="#location" class="mobile-nav-item">
+            <span class="nav-item-num">06</span>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Location & Directions</span>
+              <span class="nav-item-desc">Toppo House, Nagra Toli, Ranchi</span>
+            </div>
+            <svg class="nav-item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="#contact" class="mobile-nav-item">
+            <span class="nav-item-num">07</span>
+            <div class="nav-item-text">
+              <span class="nav-item-title">Contact & Timings</span>
+              <span class="nav-item-desc">Open 11:30 AM – 10:30 PM</span>
+            </div>
+            <svg class="nav-item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </nav>
+
+        <!-- Bottom Actions & Quick Contact Row -->
+        <div class="mobile-nav-footer">
+          <button class="btn-primary mobile-reserve-btn open-reserve-modal-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span>Reserve Table for Dining</span>
+          </button>
+          <div class="mobile-quick-actions">
+            <a href="tel:+918002255959" class="quick-action-pill" aria-label="Call Cafe De Arte">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>Call</span>
+            </a>
+            <a href="https://wa.me/918002255959?text=Hi%20Cafe%20De%20Arte,%20I%20would%20like%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" class="quick-action-pill" aria-label="WhatsApp order">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://maps.app.goo.gl/W1zDcsuxW36somATA" target="_blank" rel="noopener noreferrer" class="quick-action-pill" aria-label="Directions to Cafe De Arte">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+              <span>Map</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Main Content Wrapper -->
