@@ -1,0 +1,1886 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafe De Arte | Korean Soul & Indigenous Roots | Ranchi</title>
+
+    <!-- Primary SEO Meta Tags -->
+    <meta
+      name="title"
+      content="Cafe De Arte | Korean Soul & Indigenous Roots | Ranchi"
+    />
+    <meta
+      name="description"
+      content="Discover Cafe De Arte, nestled in the ancestral Toppo House near Nagra Toli, Lalpur, Ranchi. Serving authentic Korean Bibimbap, Ramyeon, and Bulgogi alongside handcrafted indigenous finger-millet (Ragi) momos."
+    />
+    <meta
+      name="keywords"
+      content="Cafe De Arte, Cafe De Arte Ranchi, Korean Cafe Ranchi, Nagra Toli, Toppo House, Lalpur Ranchi, Ragi Momos, Bibimbap, Ramyeon, Mandi Eddpa, Tribe Tree"
+    />
+    <meta name="author" content="Cafe De Arte" />
+    <meta name="theme-color" content="#14110F" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="restaurant" />
+    <meta
+      property="og:url"
+      content="https://maps.app.goo.gl/W1zDcsuxW36somATA"
+    />
+    <meta
+      property="og:title"
+      content="Cafe De Arte | Korean Soul & Indigenous Roots | Ranchi"
+    />
+    <meta
+      property="og:description"
+      content="An artistic culinary haven in Nagra Toli, Ranchi. Savor Korean comfort flavors intertwined with local Jharkhandi tribal heritage."
+    />
+    <meta property="og:image" content="assets/images/bibimbap.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+
+    <!-- Google Fonts: Outfit (Luxury Geometric Display) & Plus Jakarta Sans (Clean Modern UI) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Three.js via Official CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Custom Glowing Cursor (Desktop Only) -->
+    <div id="custom-cursor" class="custom-cursor"></div>
+    <div id="cursor-follower" class="cursor-follower"></div>
+
+    <!-- Background Three.js Particle Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- ==========================================================================
+       ANIMATED CHEF PULL-TO-REFRESH CONTAINER
+       ========================================================================== -->
+    <div id="pull-refresh-container" class="pull-refresh-container">
+      <div class="chef-pull-wrap">
+        <div class="chef-character">
+          <div class="chef-steam">
+            <span class="steam-bubble s1">♨</span>
+            <span class="steam-bubble s2">♨</span>
+            <span class="steam-bubble s3">♨</span>
+          </div>
+          <svg class="chef-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Chef Toque Hat -->
+            <path d="M42 42C35 42 30 36 32 29C34 22 41 20 46 21C49 14 59 12 65 16C71 12 82 14 84 21C89 20 96 23 97 29C99 36 94 42 88 42H42Z" fill="#FFFFFF" stroke="#E25822" stroke-width="2.5" stroke-linejoin="round"/>
+            <rect x="42" y="40" width="46" height="7" rx="3" fill="#E25822"/>
+            <!-- Chef Head -->
+            <circle cx="65" cy="56" r="14" fill="#FFDFC4"/>
+            <!-- Chef Eyes -->
+            <circle class="chef-eye left-eye" cx="60" cy="54" r="2" fill="#231C16"/>
+            <circle class="chef-eye right-eye" cx="70" cy="54" r="2" fill="#231C16"/>
+            <!-- Chef Mustache -->
+            <path d="M57 60C61 58 64 61 65 62C66 61 69 58 73 60C71 63 66 64 65 63C64 64 59 63 57 60Z" fill="#4A3B32"/>
+            <!-- Red Neckerchief -->
+            <path d="M53 66L65 71L77 66L69 76L61 76L53 66Z" fill="#D9381E"/>
+            <!-- White Chef Jacket/Body -->
+            <path d="M46 72C42 75 40 85 40 98H90C90 85 88 75 84 72L65 74L46 72Z" fill="#FFFFFF" stroke="#E25822" stroke-width="2"/>
+            <!-- Jacket Buttons -->
+            <circle cx="61" cy="80" r="1.5" fill="#E25822"/>
+            <circle cx="69" cy="80" r="1.5" fill="#E25822"/>
+            <circle cx="61" cy="88" r="1.5" fill="#E25822"/>
+            <circle cx="69" cy="88" r="1.5" fill="#E25822"/>
+            <!-- Left Arm pulling rope -->
+            <path class="chef-arm left-arm" d="M42 75L30 84L38 88" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Right Arm holding wooden spoon -->
+            <path class="chef-arm right-arm" d="M88 75L98 82L92 89" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Wooden Spoon / Ladle -->
+            <path d="M96 76L108 92" stroke="#C88A58" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="94" cy="74" rx="4" ry="6" fill="#C88A58"/>
+          </svg>
+        </div>
+        <div class="pull-text-wrap">
+          <span class="pull-headline" id="pull-status-text">PULL DOWN TO REFRESH THE KITCHEN</span>
+          <span class="pull-subtext">Serving fresh sizzled Korean bowls & tribal momos</span>
+        </div>
+        <div class="pull-arrow-indicator">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+       CINEMATIC 3D LOGO ZOOM-THROUGH OPENING EXPERIENCE
+       ========================================================================== -->
+    <div id="cinematic-intro" class="cinematic-intro-light" aria-hidden="true">
+      <div class="intro-ambient-radiance"></div>
+
+      <!-- Center Logo & Emblem Focus Stage -->
+      <div class="intro-hero-logo-stage">
+        <div class="intro-portal-ring"></div>
+        <div class="intro-logo-container" id="intro-zoom-target">
+          <div class="intro-emblem-halo">
+            <img src="assets/logo/emblem.svg" alt="Cafe De Arte Emblem" class="intro-zoom-emblem" />
+          </div>
+          <div class="intro-text-lockup">
+            <span class="intro-tagline-text">KOREAN SOUL • INDIGENOUS ROOTS</span>
+            <h1 class="intro-brand-name">CAFE DE ARTE</h1>
+            <p class="intro-location-tag">TOPPO HOUSE • NAGRA TOLI • RANCHI</p>
+          </div>
+        </div>
+        <div class="intro-zoom-lens-flare"></div>
+      </div>
+
+      <!-- Skip Intro Action -->
+      <button
+        id="skip-intro-btn"
+        class="skip-intro-btn"
+        title="Skip cinematic introduction"
+      >
+        <span>Skip Experience</span>
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- ==========================================================================
+       SITE HEADER & FLOATING GLASS NAVIGATION
+       ========================================================================== -->
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        <!-- Real Brand Logo -->
+        <a
+          href="#home"
+          class="brand-logo-link"
+          aria-label="Cafe De Arte Homepage"
+        >
+          <img
+            src="assets/logo/logo.svg"
+            alt="Cafe De Arte Logo"
+            class="nav-brand-logo"
+          />
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="desktop-nav" role="navigation" aria-label="Main Navigation">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#story" class="nav-link">Heritage</a>
+          <a href="#experience" class="nav-link">Atmosphere</a>
+          <a href="#menu" class="nav-link">3D Menu</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#location" class="nav-link">Find Us</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Header Action Controls -->
+        <div class="header-actions">
+          <!-- Table Reservation CTA -->
+          <button class="reserve-nav-btn open-reserve-modal-btn">
+            Reserve Table
+          </button>
+
+          <!-- Demo Cart Button (Hidden by default, reveals only when items are added) -->
+          <button id="header-cart-btn" class="cart-toggle-btn cart-hidden" aria-label="View demo cart">
+            <svg
+              class="cart-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+              ></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-text">Cart</span>
+            <span id="cart-badge-count" class="cart-badge">0</span>
+          </button>
+
+          <!-- Mobile Menu Toggle Button -->
+          <button
+            id="mobile-menu-btn"
+            class="mobile-menu-btn"
+            aria-label="Toggle navigation menu"
+          >
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Slide Overlay -->
+    <div id="mobile-nav-overlay" class="mobile-nav-overlay">
+      <a href="#home" class="mobile-nav-link">Home</a>
+      <a href="#story" class="mobile-nav-link">Our Heritage</a>
+      <a href="#experience" class="mobile-nav-link">Atmosphere</a>
+      <a href="#menu" class="mobile-nav-link">3D Menu</a>
+      <a href="#gallery" class="mobile-nav-link">Visual Gallery</a>
+      <a href="#location" class="mobile-nav-link">Location & Map</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <button
+        class="btn-primary open-reserve-modal-btn"
+        style="margin-top: 20px"
+      >
+        Reserve a Table
+      </button>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <main id="main-content">
+      <!-- ==========================================================================
+         HERO SECTION: 3D INTERACTIVE CULINARY STAGE
+         ========================================================================== -->
+      <section id="home" class="hero-section">
+        <div class="hero-ambient-glow"></div>
+
+        <!-- 3D Flying & Orbiting Foods Parallax Layer (Momos, Ramyeon, Pizza, Burger, Bibimbap) -->
+        <div class="hero-floating-foods-container" id="hero-floating-foods" aria-hidden="true">
+          <!-- Food 1: Steaming Ragi Momos -->
+          <div class="flying-food-item item-momos" data-speed="1.8" data-rotate="-10">
+            <div class="flying-food-inner">
+              <div class="food-aura"></div>
+              <img src="assets/images/ragi-momos.jpg" alt="Ragi Momos" class="food-avatar" />
+              <div class="food-steam">
+                <span class="f-steam s1">♨</span>
+                <span class="f-steam s2">♨</span>
+              </div>
+              <span class="food-pill-badge">🥟 Ragi Momos</span>
+            </div>
+          </div>
+
+          <!-- Food 2: Simmering Korean Ramyeon -->
+          <div class="flying-food-item item-ramyeon" data-speed="2.4" data-rotate="12">
+            <div class="flying-food-inner">
+              <div class="food-aura"></div>
+              <img src="assets/images/ramyeon.jpg" alt="Korean Ramyeon" class="food-avatar" />
+              <div class="food-steam">
+                <span class="f-steam s1">♨</span>
+                <span class="f-steam s2">♨</span>
+              </div>
+              <span class="food-pill-badge">🍜 Spicy Ramyeon</span>
+            </div>
+          </div>
+
+          <!-- Food 3: Artisan Cheese Pizza Slice -->
+          <div class="flying-food-item item-pizza" data-speed="1.4" data-rotate="-16">
+            <div class="flying-food-inner">
+              <div class="food-aura"></div>
+              <div class="food-avatar pizza-vector">
+                <svg viewBox="0 0 100 100" class="food-vector-svg">
+                  <path d="M50 10 L90 80 C70 90 30 90 10 80 Z" fill="#D35400" stroke="#A04000" stroke-width="2"/>
+                  <path d="M48 18 L82 76 C66 84 34 84 18 76 Z" fill="#F39C12"/>
+                  <ellipse cx="50" cy="12" rx="40" ry="7" fill="#E67E22"/>
+                  <circle cx="50" cy="46" r="8" fill="#C0392B"/>
+                  <circle cx="66" cy="65" r="7" fill="#C0392B"/>
+                  <circle cx="34" cy="66" r="7.5" fill="#C0392B"/>
+                  <!-- Melted cheese drops -->
+                  <path d="M44 58 Q50 68 56 58" stroke="#F1C40F" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                  <path d="M28 50 Q34 60 40 50" stroke="#F1C40F" stroke-width="3" stroke-linecap="round" fill="none"/>
+                  <!-- Basil leaf -->
+                  <path d="M52 32 Q58 26 64 30 Q60 36 52 32 Z" fill="#27AE60"/>
+                  <path d="M38 40 Q44 34 50 38 Q46 44 38 40 Z" fill="#2ECC71"/>
+                </svg>
+              </div>
+              <span class="food-pill-badge">🍕 Artisan Pizza</span>
+            </div>
+          </div>
+
+          <!-- Food 4: Gourmet Glazed Brioche Burger -->
+          <div class="flying-food-item item-burger" data-speed="2.0" data-rotate="10">
+            <div class="flying-food-inner">
+              <div class="food-aura"></div>
+              <div class="food-avatar burger-vector">
+                <svg viewBox="0 0 100 100" class="food-vector-svg">
+                  <!-- Top Bun -->
+                  <path d="M16 46 C16 22 84 22 84 46 Z" fill="#E5A65E" stroke="#B37830" stroke-width="2"/>
+                  <!-- Sesame Seeds -->
+                  <ellipse cx="38" cy="32" rx="2.5" ry="1.2" fill="#FFF8E7" transform="rotate(-15 38 32)"/>
+                  <ellipse cx="58" cy="30" rx="2.5" ry="1.2" fill="#FFF8E7" transform="rotate(12 58 30)"/>
+                  <ellipse cx="48" cy="38" rx="2.5" ry="1.2" fill="#FFF8E7"/>
+                  <!-- Fresh Green Lettuce -->
+                  <path d="M12 48 Q20 56 28 49 Q38 57 48 49 Q58 57 68 49 Q78 56 88 48" fill="#2ECC71" stroke="#27AE60" stroke-width="3"/>
+                  <!-- Juicy Grilled Patty -->
+                  <rect x="16" y="53" width="68" height="13" rx="6.5" fill="#5D2E17" stroke="#3D1C0C" stroke-width="1.5"/>
+                  <!-- Cheddar Cheese Melt -->
+                  <path d="M18 53 L36 68 L54 53 L72 65 L82 53" fill="#F1C40F"/>
+                  <!-- Fresh Tomato Slices -->
+                  <rect x="22" y="66" width="56" height="5" rx="2.5" fill="#E74C3C"/>
+                  <!-- Bottom Brioche Bun -->
+                  <rect x="18" y="71" width="64" height="13" rx="6" fill="#E5A65E" stroke="#B37830" stroke-width="2"/>
+                </svg>
+              </div>
+              <span class="food-pill-badge">🍔 Brioche Burger</span>
+            </div>
+          </div>
+
+          <!-- Food 5: Sizzling Stone Bibimbap -->
+          <div class="flying-food-item item-bibimbap" data-speed="1.7" data-rotate="-8">
+            <div class="flying-food-inner">
+              <div class="food-aura"></div>
+              <img src="assets/images/bibimbap.jpg" alt="Dolsot Bibimbap" class="food-avatar" />
+              <div class="food-steam">
+                <span class="f-steam s1">♨</span>
+                <span class="f-steam s2">♨</span>
+              </div>
+              <span class="food-pill-badge">🍲 Sizzling Dolsot</span>
+            </div>
+          </div>
+
+          <!-- Food 6: Wok Tossed Wavy Noodles -->
+          <div class="flying-food-item item-noodles" data-speed="2.1" data-rotate="15">
+            <div class="flying-food-inner">
+              <div class="food-aura"></div>
+              <img src="assets/images/fried-rice.jpg" alt="Wok Special" class="food-avatar" />
+              <span class="food-pill-badge">🥢 Wok Stir-Fry</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-container">
+          <!-- Text & Narrative Column -->
+          <div class="hero-content">
+            <!-- Real-Time Operating Hours Badge -->
+            <div class="status-pill" id="live-status-pill">
+              <span id="live-status-text">
+                <span class="status-indicator"></span> OPEN NOW • Closes at
+                10:00 PM
+              </span>
+            </div>
+
+            <div class="hero-title-wrap">
+              <span class="hero-pretitle">AN ANCESTRAL SANCTUARY OF TASTE</span>
+              <h1 class="hero-title">
+                CAFE DE <span class="hero-title-accent">ARTE</span>
+              </h1>
+            </div>
+
+            <p class="hero-description">
+              Where <strong>comforting Korean culinary soul</strong> intertwines
+              with <strong>indigenous tribal Jharkhandi heritage</strong>. Savor
+              stone-bowl Bibimbap, simmering Ramyeon broths, and handcrafted
+              finger-millet <em>Madua Momos</em> in the welcoming heart of Toppo
+              House.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#menu" class="btn-primary">
+                <span>Explore 3D Menu</span>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#story" class="btn-secondary">
+                <span>Our Heritage</span>
+              </a>
+            </div>
+
+            <!-- Verified Real Business Stats -->
+            <div class="hero-stats-bar">
+              <div class="stat-item">
+                <span class="stat-value">4.5★</span>
+                <span class="stat-label">Google Rating</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">440+</span>
+                <span class="stat-label">Verified Reviews</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">₹400</span>
+                <span class="stat-label">For Two</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">2023</span>
+                <span class="stat-label">Founded</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3D Interactive Floating Culinary Stage -->
+          <div class="hero-stage-column">
+            <div id="hero-3d-stage" class="hero-3d-stage">
+              <!-- Centerpiece Card: Sizzling Bibimbap -->
+              <div class="stage-main-card">
+                <div class="stage-img-wrap">
+                  <img
+                    src="assets/images/bibimbap.jpg"
+                    alt="Dolsot Bibimbap at Cafe De Arte"
+                  />
+                  <span class="stage-badge">Signature Dolsot</span>
+                </div>
+                <div class="stage-card-info">
+                  <h3 class="stage-dish-title">Bibimbap Stone Bowl</h3>
+                  <div class="stage-dish-desc">
+                    <span>Mountain Veg • Gochujang • Sesame</span>
+                    <span class="stage-dish-price">₹260</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Satellite 3D Floating Card Left: Korean Ramyeon -->
+              <div class="stage-floating-card card-left">
+                <img
+                  class="floating-thumb"
+                  src="assets/images/ramyeon.jpg"
+                  alt="Korean Ramyeon"
+                />
+                <div class="floating-text-wrap">
+                  <h4>Chicken Ramyeon</h4>
+                  <p>Spicy Broth • ₹260</p>
+                </div>
+              </div>
+
+              <!-- Satellite 3D Floating Card Right: Ragi Momos -->
+              <div class="stage-floating-card card-right">
+                <img
+                  class="floating-thumb"
+                  src="assets/images/ragi-momos.jpg"
+                  alt="Ragi Momos"
+                />
+                <div class="floating-text-wrap">
+                  <h4>Handcrafted Ragi Momos</h4>
+                  <p>Madua Millet • ₹180</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+         HERITAGE & STORY SECTION (Anju Toppo, Toppo House & Mandi Eddpa)
+         ========================================================================== -->
+      <section id="story" class="section-padding">
+        <div class="section-header">
+          <span class="section-pretitle">THE SOUL BEHIND THE CRAFT</span>
+          <h2 class="section-title">An Ancestral Haven in Nagra Toli</h2>
+          <p class="section-subtitle">
+            Bridging the comforting depth of Korean street delicacies with the
+            living wisdom of Jharkhand’s indigenous forest traditions.
+          </p>
+        </div>
+
+        <div class="heritage-container">
+          <!-- Visual Composition -->
+          <div class="heritage-visual-wrap">
+            <div class="heritage-main-img-card">
+              <img
+                src="assets/images/cafe-interior.jpg"
+                alt="Cozy interior of Cafe De Arte at Toppo House"
+              />
+            </div>
+            <div class="heritage-float-badge">
+              <h5>Mandi Eddpa Heritage</h5>
+              <p>
+                Conceived by entrepreneur Anju Toppo as an artistic extension of
+                tribal culinary resilience and community pride.
+              </p>
+            </div>
+          </div>
+
+          <!-- Story Details -->
+          <div class="heritage-story-content">
+            <p class="story-lead">
+              Housed within the ancestral Toppo family residence, Cafe De Arte
+              is far more than a typical dining space—it is an intimate cultural
+              conversation.
+            </p>
+            <p class="story-body">
+              Founded in November 2023 by Anju Toppo, the cafe draws deep
+              philosophical parallels between Korean food traditions—rich with
+              slow-simmered broths, handmade dumplings, and fermented
+              delights—and the ancestral village recipes of Jharkhand like
+              steamed <em>pitha</em>, earthy finger-millet
+              (<em>madua/ragi</em>), and forest herbs.
+            </p>
+            <p class="story-body">
+              The walls celebrate this dual narrative: vintage pop-culture
+              cinema posters of Darth Vader and Popeye converse seamlessly with
+              black-and-white anthropological portraits of Adivasi communities,
+              creating a cozy sanctuary where art, heritage, and flavor meet.
+            </p>
+
+            <!-- Core Pillars -->
+            <div class="heritage-pillars">
+              <div class="pillar-card">
+                <h4>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                    />
+                  </svg>
+                  Indigenous Grains
+                </h4>
+                <p>
+                  Promoting wholesome finger-millet (Madua/Ragi) dumplings,
+                  honoring Jharkhand’s agricultural legacy.
+                </p>
+              </div>
+              <div class="pillar-card">
+                <h4>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                  Tribe Tree Corner
+                </h4>
+                <p>
+                  A curated artisanal space supporting indigenous weavers,
+                  traditional handlooms, and tribal textile designs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+         ATMOSPHERE & EXPERIENCE SECTION
+         ========================================================================== -->
+      <section
+        id="experience"
+        class="section-padding"
+        style="background: #0f0c0a"
+      >
+        <div class="section-header">
+          <span class="section-pretitle">THE VIBE</span>
+          <h2 class="section-title">Where Vintage Pop Meets Adivasi Art</h2>
+          <p class="section-subtitle">
+            Step off S.N. Yadav Road into a quiet, warm-lit home haven filled
+            with art, conversations, and acoustic melodies.
+          </p>
+        </div>
+
+        <div class="heritage-container" style="direction: rtl">
+          <div class="heritage-visual-wrap" style="direction: ltr">
+            <div class="heritage-main-img-card">
+              <img
+                src="assets/images/cafe-exterior.jpg"
+                alt="Patio and entrance of Cafe De Arte"
+              />
+            </div>
+            <div class="heritage-float-badge" style="right: auto; left: -25px">
+              <h5>Cozy Patio Seating</h5>
+              <p>
+                Breezy outdoor seating under festoon fairy lights paired with
+                intimate indoor living-room spaces.
+              </p>
+            </div>
+          </div>
+
+          <div class="heritage-story-content" style="direction: ltr">
+            <p class="story-lead">
+              "We wanted to build a place where young creators, students, and
+              families can gather over authentic food without pretense."
+            </p>
+            <div
+              class="heritage-pillars"
+              style="grid-template-columns: 1fr; gap: 16px; margin-top: 10px"
+            >
+              <div class="pillar-card">
+                <h4>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                    <line x1="9" y1="9" x2="9.01" y2="9" />
+                    <line x1="15" y1="9" x2="15.01" y2="9" />
+                  </svg>
+                  Warm Community Hangout
+                </h4>
+                <p>
+                  Beloved by college students and local food enthusiasts seeking
+                  genuine Korean flavors at pocket-friendly prices (avg ₹400 for
+                  two).
+                </p>
+              </div>
+              <div class="pillar-card">
+                <h4>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  Curated Cultural Events
+                </h4>
+                <p>
+                  Proudly linked with regional cultural celebrations like the
+                  annual Mahua Festival, food preservation, and local tribal
+                  empowerment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+         INTERACTIVE 3D MENU EXPERIENCE
+         ========================================================================== -->
+      <section id="menu" class="section-padding menu-section">
+        <div class="section-header">
+          <span class="section-pretitle">AUTHENTIC CULINARY REPERTOIRE</span>
+          <h2 class="section-title">Explore Our 3D Menu</h2>
+          <p class="section-subtitle">
+            Every dish is crafted with real ingredients, authentic techniques,
+            and pocket-friendly pricing. Click any dish to view ingredients or
+            add to your demo cart.
+          </p>
+        </div>
+
+        <!-- Menu Category Tabs -->
+        <div class="menu-filter-wrap">
+          <button class="filter-btn active" data-filter="all">
+            All Offerings
+          </button>
+          <button class="filter-btn" data-filter="korean">
+            Korean Signatures
+          </button>
+          <button class="filter-btn" data-filter="indigenous">
+            Indigenous Ragi Craft
+          </button>
+          <button class="filter-btn" data-filter="wok">Wok & Broths</button>
+          <button class="filter-btn" data-filter="beverages">
+            Handcrafted Sips
+          </button>
+        </div>
+
+        <!-- 3D Menu Grid (Injected dynamically by script.js) -->
+        <div id="menu-items-grid" class="menu-grid">
+          <!-- Rendered by JavaScript -->
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+         INTERACTIVE 3D GALLERY & LIGHTBOX
+         ========================================================================== -->
+      <section id="gallery" class="section-padding">
+        <div class="section-header">
+          <span class="section-pretitle">CAPTURED MOMENTS</span>
+          <h2 class="section-title">Inside Cafe De Arte</h2>
+          <p class="section-subtitle">
+            Click any photograph to explore our dishes, decor, and heritage
+            ambiance in full-screen immersion.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Photo 1 -->
+          <div
+            class="gallery-card"
+            data-img="assets/images/bibimbap.jpg"
+            data-title="Dolsot Bibimbap"
+            data-cat="Korean Specialty"
+          >
+            <img
+              src="assets/images/bibimbap.jpg"
+              alt="Dolsot Bibimbap at Cafe De Arte"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="gallery-category">Korean Specialty</span>
+              <h4 class="gallery-title">Dolsot Bibimbap</h4>
+            </div>
+          </div>
+
+          <!-- Photo 2 -->
+          <div
+            class="gallery-card"
+            data-img="assets/images/ramyeon.jpg"
+            data-title="Spicy Chicken Ramyeon"
+            data-cat="Comfort Broth"
+          >
+            <img
+              src="assets/images/ramyeon.jpg"
+              alt="Chicken Ramyeon Broth"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="gallery-category">Comfort Broth</span>
+              <h4 class="gallery-title">Spicy Chicken Ramyeon</h4>
+            </div>
+          </div>
+
+          <!-- Photo 3 -->
+          <div
+            class="gallery-card"
+            data-img="assets/images/ragi-momos.jpg"
+            data-title="Handmade Ragi Momos"
+            data-cat="Indigenous Fusion"
+          >
+            <img
+              src="assets/images/ragi-momos.jpg"
+              alt="Finger-Millet Ragi Momos in Bamboo Steamer"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="gallery-category">Indigenous Fusion</span>
+              <h4 class="gallery-title">Handmade Ragi Momos</h4>
+            </div>
+          </div>
+
+          <!-- Photo 4 -->
+          <div
+            class="gallery-card"
+            data-img="assets/images/cafe-interior.jpg"
+            data-title="Vintage Artistic Interior"
+            data-cat="Ambiance"
+          >
+            <img
+              src="assets/images/cafe-interior.jpg"
+              alt="Cafe De Arte Interior Design"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="gallery-category">Ambiance</span>
+              <h4 class="gallery-title">Vintage Artistic Interior</h4>
+            </div>
+          </div>
+
+          <!-- Photo 5 -->
+          <div
+            class="gallery-card"
+            data-img="assets/images/cafe-exterior.jpg"
+            data-title="Ancestral Toppo House Patio"
+            data-cat="Heritage Setting"
+          >
+            <img
+              src="assets/images/cafe-exterior.jpg"
+              alt="Cafe Exterior at S.N. Yadav Road"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="gallery-category">Heritage Setting</span>
+              <h4 class="gallery-title">Toppo House Patio</h4>
+            </div>
+          </div>
+
+          <!-- Photo 6 -->
+          <div
+            class="gallery-card"
+            data-img="assets/images/iced-tea.jpg"
+            data-title="Signature Spiced Iced Tea"
+            data-cat="Beverages"
+          >
+            <img
+              src="assets/images/iced-tea.jpg"
+              alt="Handcrafted Iced Tea"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="gallery-category">Beverages</span>
+              <h4 class="gallery-title">Signature Spiced Iced Tea</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+         GOOGLE MAPS & REAL-WORLD LOCATION SECTION
+         ========================================================================== -->
+      <section id="location" class="section-padding location-section">
+        <div class="section-header">
+          <span class="section-pretitle">VERIFIED GOOGLE MAPS LOCATION</span>
+          <h2 class="section-title">Find Us at Toppo House</h2>
+          <p class="section-subtitle">
+            Located on S.N. Yadav Road in Nagra Toli (Lalpur area), Ranchi. We
+            recommend arriving by two-wheeler or cab for effortless doorstep
+            parking.
+          </p>
+        </div>
+
+        <div class="location-container">
+          <!-- 3D Location Information Card -->
+          <div class="location-info-card">
+            <div>
+              <span class="location-badge">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Verified Business Coordinates</span>
+              </span>
+              <h3>Cafe De Arte</h3>
+              <p class="location-address">
+                Shop No. 1, S.N. Yadav Road, near Toppo House, Nagra Toli,
+                Lalpur, Ranchi, Jharkhand 834001, India.
+              </p>
+
+              <div class="location-details-list">
+                <div class="loc-detail-row">
+                  <div class="loc-icon-wrap">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="loc-detail-text">
+                    <h6>Phone & Inquiries</h6>
+                    <p>+91 83360 70979</p>
+                  </div>
+                </div>
+
+                <div class="loc-detail-row">
+                  <div class="loc-icon-wrap">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                  </div>
+                  <div class="loc-detail-text">
+                    <h6>Daily Operating Hours</h6>
+                    <p>
+                      Thu–Sun: 11 AM – 10 PM • Mon: 12 PM – 9:30 PM • Tue–Wed:
+                      12 PM – 10 PM
+                    </p>
+                  </div>
+                </div>
+
+                <div class="loc-detail-row">
+                  <div class="loc-icon-wrap">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polygon points="3 11 22 2 13 21 11 13 3 11" />
+                    </svg>
+                  </div>
+                  <div class="loc-detail-text">
+                    <h6>GPS Precision Coordinates</h6>
+                    <p>23.3838613° N, 85.3301628° E</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="location-action-btns">
+              <!-- Official Google Maps Navigation Link -->
+              <a
+                href="https://maps.app.goo.gl/W1zDcsuxW36somATA"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon points="3 11 22 2 13 21 11 13 3 11" />
+                </svg>
+                <span>Get Directions</span>
+              </a>
+              <a href="tel:+918336070979" class="btn-secondary">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                <span>Call Cafe</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3D Embedded Google Map Frame -->
+          <div class="map-viewport-frame">
+            <div class="map-iframe-container">
+              <!-- Google Maps Embed using exact coordinates for Cafe De Arte -->
+              <iframe
+                src="https://maps.google.com/maps?q=23.3838613,85.3301628&hl=en&z=16&output=embed"
+                allowfullscreen=""
+                loading="eager"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Cafe De Arte Google Maps Location"
+              >
+              </iframe>
+            </div>
+            <div class="map-card-floating-overlay">
+              <div class="map-float-info">
+                <h5>Near Toppo House</h5>
+                <p>Nagra Toli, Lalpur, Ranchi</p>
+              </div>
+              <a
+                href="https://maps.app.goo.gl/W1zDcsuxW36somATA"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  color: var(--amber-light);
+                  font-size: 0.85rem;
+                  font-weight: 700;
+                  display: flex;
+                  align-items: center;
+                  gap: 4px;
+                "
+              >
+                <span>Open in Maps</span>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+         COMMUNITY SPOTLIGHT & SOCIAL (Instagram / Reviews)
+         ========================================================================== -->
+      <section id="contact" class="section-padding" style="background: #0d0a09">
+        <div class="section-header">
+          <span class="section-pretitle">COMMUNITY REPUTATION</span>
+          <h2 class="section-title">Stories From Nagra Toli</h2>
+          <p class="section-subtitle">
+            Over 440+ verified patrons celebrating the unique fusion of Korean
+            soul food and authentic tribal warmth.
+          </p>
+        </div>
+
+        <div
+          class="heritage-pillars"
+          style="max-width: var(--max-width); margin: 0 auto; gap: 24px"
+        >
+          <div class="pillar-card">
+            <div
+              style="
+                display: flex;
+                gap: 4px;
+                color: var(--amber);
+                margin-bottom: 12px;
+              "
+            >
+              ★★★★★
+            </div>
+            <p
+              style="
+                font-style: italic;
+                font-size: 0.95rem;
+                color: var(--text-light);
+                margin-bottom: 14px;
+              "
+            >
+              "Such a cozy and aesthetic home cafe in Lalpur. The Chicken
+              Ramyeon was packed with authentic depth, and the Ragi Momos are a
+              culinary revelation! Truly a gem for Ranchi."
+            </p>
+            <span
+              style="
+                font-size: 0.8rem;
+                color: var(--amber-light);
+                font-weight: 700;
+              "
+              >— Verified Swiggy & Google Review</span
+            >
+          </div>
+
+          <div class="pillar-card">
+            <div
+              style="
+                display: flex;
+                gap: 4px;
+                color: var(--amber);
+                margin-bottom: 12px;
+              "
+            >
+              ★★★★★
+            </div>
+            <p
+              style="
+                font-style: italic;
+                font-size: 0.95rem;
+                color: var(--text-light);
+                margin-bottom: 14px;
+              "
+            >
+              "Love the blend of retro movie posters with indigenous culture.
+              The Bulgogi Rice Bowl and iced tea hit the spot every single time.
+              Anju Toppo's vision is inspiring."
+            </p>
+            <span
+              style="
+                font-size: 0.8rem;
+                color: var(--amber-light);
+                font-weight: 700;
+              "
+              >— Local Food Enthusiast</span
+            >
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px">
+          <a
+            href="https://www.instagram.com/explore/tags/cafedearteranchi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-secondary"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+            <span>See What's Happening on Instagram</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================================================
+       DEMO CART SLIDE-OUT DRAWER
+       ========================================================================== -->
+    <div id="cart-backdrop" class="cart-drawer-backdrop"></div>
+    <aside id="cart-drawer" class="cart-drawer" aria-label="Shopping Cart">
+      <div class="cart-drawer-header">
+        <h3>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span>Your Demo Cart</span>
+        </h3>
+        <button
+          id="cart-close-btn"
+          class="cart-close-btn"
+          aria-label="Close cart"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="demo-cart-notice">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="16" x2="12" y2="12" />
+          <line x1="12" y1="8" x2="12.01" y2="8" />
+        </svg>
+        <span
+          >Interactive Demo Cart: Real dishes & pricing calculated
+          dynamically.</span
+        >
+      </div>
+
+      <div id="cart-items-container" class="cart-drawer-items">
+        <!-- Injected by JavaScript -->
+      </div>
+
+      <div class="cart-drawer-footer">
+        <div class="cart-calc-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">₹0</span>
+        </div>
+        <div class="cart-calc-row">
+          <span>Estimated GST (5%)</span>
+          <span>Included</span>
+        </div>
+        <div class="cart-total-row">
+          <span>Total Amount</span>
+          <span id="cart-total">₹0</span>
+        </div>
+        <button id="checkout-demo-btn" class="btn-checkout">
+          Simulate Demo Checkout
+        </button>
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+       MODAL: DISH QUICK VIEW
+       ========================================================================== -->
+    <div id="quick-view-modal" class="modal-backdrop">
+      <div class="modal-window quick-view-window">
+        <button
+          id="qv-close-btn"
+          class="modal-close-btn"
+          aria-label="Close dish preview"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <div class="quick-view-media">
+          <img id="qv-img" src="" alt="Dish preview" />
+        </div>
+        <div class="quick-view-details">
+          <h3
+            id="qv-title"
+            style="
+              font-family: var(--font-display);
+              font-size: 1.4rem;
+              color: var(--text-light);
+              margin-bottom: 6px;
+            "
+          >
+            Dish Title
+          </h3>
+          <span
+            id="qv-price"
+            style="
+              font-family: var(--font-display);
+              font-size: 1.3rem;
+              font-weight: 700;
+              color: var(--amber);
+              margin-bottom: 16px;
+            "
+            >₹0</span
+          >
+          <p
+            id="qv-desc"
+            style="
+              font-size: 0.9rem;
+              color: var(--text-muted);
+              line-height: 1.6;
+              margin-bottom: 20px;
+            "
+          >
+            Description
+          </p>
+
+          <h6
+            style="
+              font-size: 0.75rem;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              color: var(--amber-light);
+              margin-bottom: 6px;
+            "
+          >
+            Key Ingredients & Craft:
+          </h6>
+          <p
+            id="qv-ingredients"
+            style="
+              font-size: 0.85rem;
+              color: var(--text-subtle);
+              margin-bottom: 28px;
+            "
+          >
+            Ingredients
+          </p>
+
+          <button
+            id="qv-add-btn"
+            class="btn-primary"
+            style="width: 100%; margin-top: auto"
+          >
+            Add to Demo Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+       MODAL: TABLE RESERVATION
+       ========================================================================== -->
+    <div id="reservation-modal" class="modal-backdrop">
+      <div class="modal-window">
+        <button
+          id="reserve-close-btn"
+          class="modal-close-btn"
+          aria-label="Close reservation"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <div class="modal-header">
+          <h3>Reserve Your Table</h3>
+          <p>
+            Experience the peaceful ambiance of Toppo House. We hold
+            reservations for 15 minutes.
+          </p>
+        </div>
+
+        <form id="reservation-form" class="reservation-form">
+          <div class="form-group">
+            <label for="res-name">Your Full Name</label>
+            <input
+              type="text"
+              id="res-name"
+              required
+              placeholder="e.g. Priya Sharma"
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-phone">Phone Number</label>
+              <input
+                type="tel"
+                id="res-phone"
+                required
+                placeholder="e.g. +91 98765 43210"
+              />
+            </div>
+            <div class="form-group">
+              <label for="res-guests">Number of Guests</label>
+              <select id="res-guests" required>
+                <option value="2 Guests">2 Guests (Cozy Table)</option>
+                <option value="4 Guests">4 Guests (Family / Friends)</option>
+                <option value="6 Guests">6 Guests (Group)</option>
+                <option value="8+ Guests">8+ Guests (Celebration)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-date">Preferred Date</label>
+              <input type="date" id="res-date" required />
+            </div>
+            <div class="form-group">
+              <label for="res-time">Time Slot</label>
+              <select id="res-time" required>
+                <option value="12:30 PM">12:30 PM (Lunch)</option>
+                <option value="02:00 PM">02:00 PM (Afternoon)</option>
+                <option value="05:30 PM">
+                  05:30 PM (Evening Tea & K-Snacks)
+                </option>
+                <option value="07:30 PM">07:30 PM (Dinner)</option>
+                <option value="09:00 PM">09:00 PM (Late Dinner)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="res-seating">Seating Preference</label>
+            <select id="res-seating">
+              <option value="Indoor Living Room (Vintage Art)">
+                Indoor Living Room (Vintage Art & Warm Lamps)
+              </option>
+              <option value="Outdoor Patio (Festoon Lights)">
+                Outdoor Patio (Festoon Bistro Fairy Lights)
+              </option>
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            class="btn-primary"
+            style="margin-top: 12px; width: 100%"
+          >
+            Confirm Reservation
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+       MODAL: DEMO CHECKOUT SUMMARY
+       ========================================================================== -->
+    <div id="demo-checkout-modal" class="modal-backdrop">
+      <div class="modal-window">
+        <div class="modal-header">
+          <span
+            style="
+              font-size: 0.75rem;
+              letter-spacing: 1px;
+              color: var(--amber);
+              text-transform: uppercase;
+              font-weight: 700;
+            "
+          >
+            Interactive Agency Prototype
+          </span>
+          <h3 style="margin-top: 4px">Demo Order Ready!</h3>
+          <p>
+            This is a simulated digital checkout demonstrating online ordering
+            capability for Cafe De Arte.
+          </p>
+        </div>
+
+        <div
+          style="
+            background: #0e0b0a;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            margin-bottom: 20px;
+          "
+        >
+          <h5
+            style="
+              font-size: 0.85rem;
+              color: var(--amber-light);
+              margin-bottom: 12px;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            "
+          >
+            Order Summary
+          </h5>
+          <ul
+            id="checkout-items-list"
+            style="list-style: none; margin-bottom: 14px"
+          ></ul>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              padding-top: 12px;
+              border-top: 1px solid var(--border-subtle);
+              font-family: var(--font-display);
+              font-size: 1.15rem;
+              font-weight: 700;
+            "
+          >
+            <span>Simulated Total</span>
+            <span id="checkout-total-price" style="color: var(--amber)"
+              >₹0</span
+            >
+          </div>
+        </div>
+
+        <p
+          style="
+            font-size: 0.82rem;
+            color: var(--text-subtle);
+            line-height: 1.5;
+            margin-bottom: 24px;
+          "
+        >
+          In the live production website, this button connects directly to UPI,
+          Razorpay, or Swiggy Direct for automated kitchen token generation.
+        </p>
+
+        <button
+          onclick="
+            document
+              .getElementById('demo-checkout-modal')
+              .classList.remove('active');
+            document.body.style.overflow = '';
+          "
+          class="btn-primary"
+          style="width: 100%"
+        >
+          Close Demonstration
+        </button>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+       MODAL: FULLSCREEN RICH MULTI-PANEL GALLERY SHOWCASE
+       ========================================================================== -->
+    <div id="gallery-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Gallery Showcase">
+      <button
+        id="lightbox-close"
+        class="lightbox-close-btn"
+        aria-label="Close fullscreen lightbox"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <div class="lightbox-showcase-container">
+        <!-- Left Panel: Craft, Heritage & Cultural Roots -->
+        <aside class="showcase-panel panel-left">
+          <div class="panel-pill" id="lb-category-badge">Korean Specialty</div>
+          <h3 id="lb-title" class="showcase-title">Dolsot Bibimbap</h3>
+          <p id="lb-story" class="showcase-story">
+            Sizzling stone bowl layered with seasoned mountain vegetables, sautéed namul, shiitake mushrooms, sunny fried egg & authentic gochujang sauce.
+          </p>
+
+          <div class="showcase-card">
+            <div class="card-icon-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <span>Heritage Craftsmanship</span>
+            </div>
+            <p id="lb-craft" class="card-body-text">
+              Served in authentic heavy granite bowls retaining heat at 180°C to create the prized crispy golden rice crust (nurungji).
+            </p>
+          </div>
+
+          <div class="showcase-card">
+            <div class="card-icon-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              <span>Cultural Philosophy</span>
+            </div>
+            <p id="lb-philosophy" class="card-body-text">
+              Anju Toppo bridges Korean ancestral food preservation techniques with Jharkhand tribal forest harvest traditions.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Center Stage: The High-Resolution Visual with 3D Perspective -->
+        <div class="showcase-center-stage">
+          <div class="showcase-image-frame">
+            <img id="lightbox-img" class="lightbox-img" src="" alt="Gallery full preview" />
+            <div class="frame-corner-tag top-left" id="lb-corner-tag">🔥 Chef's Signature</div>
+            <div class="frame-corner-tag bottom-right" id="lb-price-tag">₹260</div>
+          </div>
+          <div class="showcase-nav-bar">
+            <button id="lb-prev-btn" class="lb-nav-btn" aria-label="Previous item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+              <span>Previous</span>
+            </button>
+            <span id="lb-counter" class="lb-counter">1 / 6</span>
+            <button id="lb-next-btn" class="lb-nav-btn" aria-label="Next item">
+              <span>Next</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Panel: Pairings, What's Available & Direct CTAs -->
+        <aside class="showcase-panel panel-right">
+          <div class="showcase-card highlight-card">
+            <div class="card-icon-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              <span>Recommended Pairings</span>
+            </div>
+            <p id="lb-pairings" class="card-body-text">
+              Handcrafted Spiced Lemon Iced Tea or Artisanal Toppo House Filter Coffee + Crunchy Kimchi.
+            </p>
+          </div>
+
+          <div class="showcase-card">
+            <div class="card-icon-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Specialties & Ingredients</span>
+            </div>
+            <ul id="lb-ingredients-list" class="showcase-tags-list">
+              <li>Stone Bowl Sizzled</li>
+              <li>Organic Sticky Rice</li>
+              <li>Jharkhand Wild Herbs</li>
+              <li>House Fermented Paste</li>
+            </ul>
+          </div>
+
+          <div class="showcase-card">
+            <div class="card-icon-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Kitchen Prep Time</span>
+            </div>
+            <p id="lb-timing" class="card-body-text">Freshly prepared to order (~12–15 mins). Best enjoyed hot.</p>
+          </div>
+
+          <div class="showcase-actions">
+            <button id="lb-add-cart-btn" class="btn-primary" style="width:100%;justify-content:center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span id="lb-cta-label">Add Dish to Demo Cart</span>
+            </button>
+            <button id="lb-reserve-table-btn" class="btn-secondary" style="width:100%;justify-content:center;">
+              <span>Reserve Table for This Experience</span>
+            </button>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+       FLOATING ACTIONS: KITCHEN REFRESH ONLY (DEMO BADGE REMOVED)
+       ========================================================================== -->
+    <div class="floating-controls-cluster">
+      <button id="kitchen-refresh-btn" class="kitchen-refresh-btn" title="Pull to Refresh the Kitchen (Animated Cook)">
+        <span class="btn-chef-icon">👨‍🍳</span>
+        <span class="btn-chef-text">Kitchen Refresh</span>
+      </button>
+    </div>
+
+    <!-- ==========================================================================
+       ANIMATED DINING SCENE: TWO PATRONS SHARING A WARM MEAL AT TOPPO HOUSE
+       ========================================================================== -->
+    <section class="footer-dining-scene-section" id="dining-scene">
+      <div class="dining-scene-container">
+        <div class="dining-header-wrap">
+          <span class="dining-badge">COZY TOPPO HOUSE EVENINGS</span>
+          <h2 class="dining-headline">Two Souls, One Sacred Table</h2>
+          <p class="dining-subtext">
+            Where quiet conversations flow over simmering Korean stone bowls, spicy ramyeon broths,
+            and steaming bamboo baskets of Madua momos under warm bistro lights.
+          </p>
+        </div>
+
+        <!-- Cinema Cinemagraph Animated Dining Stage -->
+        <div class="dining-stage-viewport">
+          <div class="dining-ambient-backdrop"></div>
+
+          <!-- Hanging Bistro Festoon Lights -->
+          <div class="bistro-lights-row">
+            <div class="bistro-bulb b1"><span class="bulb-wire"></span><span class="bulb-glass"></span><span class="bulb-glow"></span></div>
+            <div class="bistro-bulb b2"><span class="bulb-wire"></span><span class="bulb-glass"></span><span class="bulb-glow"></span></div>
+            <div class="bistro-bulb b3"><span class="bulb-wire"></span><span class="bulb-glass"></span><span class="bulb-glow"></span></div>
+            <div class="bistro-bulb b4"><span class="bulb-wire"></span><span class="bulb-glass"></span><span class="bulb-glow"></span></div>
+            <div class="bistro-bulb b5"><span class="bulb-wire"></span><span class="bulb-glass"></span><span class="bulb-glow"></span></div>
+          </div>
+
+          <!-- Animated Two Diners SVG Scene -->
+          <div class="diners-svg-cinemagraph">
+            <svg class="diners-illustration-svg" viewBox="0 0 900 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="windowGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#1F1712"/>
+                  <stop offset="100%" stop-color="#120D0A"/>
+                </linearGradient>
+                <radialGradient id="tableGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="rgba(240, 154, 36, 0.28)"/>
+                  <stop offset="100%" stop-color="rgba(226, 88, 34, 0)"/>
+                </radialGradient>
+                <filter id="candleGlowEffect" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="8" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+              </defs>
+
+              <!-- Cafe Vintage Brick Window Frame & Bokeh Night Sky -->
+              <rect x="120" y="40" width="660" height="240" rx="12" fill="url(#windowGlow)" stroke="#382A20" stroke-width="3"/>
+              <line x1="450" y1="40" x2="450" y2="280" stroke="#382A20" stroke-width="2"/>
+              <line x1="120" y1="160" x2="780" y2="160" stroke="#382A20" stroke-width="2"/>
+
+              <!-- Night Bokeh Orbs outside window -->
+              <circle cx="280" cy="110" r="18" fill="#F09A24" opacity="0.15" />
+              <circle cx="340" cy="80" r="26" fill="#E25822" opacity="0.12" />
+              <circle cx="580" cy="120" r="22" fill="#F09A24" opacity="0.18" />
+              <circle cx="640" cy="90" r="16" fill="#E25822" opacity="0.1" />
+
+              <!-- Ambient Glow Over Wooden Table -->
+              <ellipse cx="450" cy="370" rx="340" ry="80" fill="url(#tableGlow)"/>
+
+              <!-- Wooden Dining Table -->
+              <path d="M140 350 Q450 340 760 350 L780 395 Q450 415 120 395 Z" fill="#2E211A" stroke="#4A362B" stroke-width="3"/>
+              <!-- Table Legs -->
+              <rect x="190" y="390" width="22" height="85" fill="#1C1410" rx="3"/>
+              <rect x="690" y="390" width="22" height="85" fill="#1C1410" rx="3"/>
+
+              <!-- Left Chair Backrest -->
+              <path d="M130 250 Q160 230 180 280 L170 380 L130 380 Z" fill="#261B15" stroke="#3D2B21" stroke-width="2"/>
+              <!-- Right Chair Backrest -->
+              <path d="M770 250 Q740 230 720 280 L730 380 L770 380 Z" fill="#261B15" stroke="#3D2B21" stroke-width="2"/>
+
+              <!-- ================= DINER 1 (LEFT PATRON: TASTING NOODLES) ================= -->
+              <g class="diner-left-group">
+                <!-- Body / Jacket (Warm Amber Tweed Coat) -->
+                <path d="M190 280 C215 260 255 260 270 280 L290 370 L180 370 Z" fill="#3D2B22" stroke="#5A4033" stroke-width="2"/>
+                <!-- Scarf / Collar -->
+                <path d="M220 275 Q235 295 250 275" stroke="#E25822" stroke-width="5" stroke-linecap="round"/>
+                <!-- Head -->
+                <circle cx="235" cy="230" r="24" fill="#D9A07A"/>
+                <!-- Hair (Modern Cut) -->
+                <path d="M212 230 C212 205 258 205 258 230 C258 220 248 210 235 210 C220 210 212 220 212 230 Z" fill="#1A120D"/>
+                <!-- Face Profile & Smile -->
+                <circle cx="242" cy="226" r="2.5" fill="#261A13"/> <!-- Eye -->
+                <path d="M242 238 Q248 244 252 238" stroke="#8C4E2B" stroke-width="2" stroke-linecap="round" fill="none"/> <!-- Smile -->
+                <!-- Arm with Chopsticks reaching towards food -->
+                <g class="diner-arm-left">
+                  <path d="M270 300 Q330 310 375 330" stroke="#D9A07A" stroke-width="12" stroke-linecap="round"/>
+                  <!-- Chopsticks -->
+                  <line x1="370" y1="335" x2="420" y2="315" stroke="#D4A373" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="372" y1="338" x2="422" y2="322" stroke="#D4A373" stroke-width="2.5" stroke-linecap="round"/>
+                </g>
+              </g>
+
+              <!-- ================= DINER 2 (RIGHT PATRON: SIPPING WARM CUP) ================= -->
+              <g class="diner-right-group">
+                <!-- Body / Knit Sweater (Warm Terracotta & Espresso) -->
+                <path d="M710 280 C685 260 645 260 630 280 L610 370 L720 370 Z" fill="#472A20" stroke="#663E2F" stroke-width="2"/>
+                <!-- Neckline -->
+                <ellipse cx="665" cy="275" rx="14" ry="6" fill="#D9A07A"/>
+                <!-- Head -->
+                <circle cx="665" cy="230" r="23" fill="#E8B896"/>
+                <!-- Hair (Long flowing waves) -->
+                <path d="M642 230 C640 195 690 195 688 230 C690 260 685 285 675 295 C660 290 644 260 642 230 Z" fill="#211510"/>
+                <!-- Face Profile & Eyes closed in savoring smile -->
+                <path d="M654 226 Q658 222 662 226" stroke="#261A13" stroke-width="2.2" stroke-linecap="round" fill="none"/> <!-- Joyful eye -->
+                <path d="M652 236 Q657 242 662 236" stroke="#A85C38" stroke-width="2" stroke-linecap="round" fill="none"/> <!-- Smile -->
+                <!-- Arms holding artisan tea bowl -->
+                <g class="diner-arm-right">
+                  <path d="M630 310 Q580 320 540 328" stroke="#E8B896" stroke-width="11" stroke-linecap="round"/>
+                  <!-- Ceramic Cup in hand -->
+                  <path d="M528 322 C528 340 552 340 552 322 Z" fill="#E25822" stroke="#F5A623" stroke-width="1.5"/>
+                  <!-- Rising Tea Steam -->
+                  <path class="steam-drift-path s-tea" d="M540 316 Q535 304 542 292 Q548 280 540 270" stroke="rgba(240, 154, 36, 0.7)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </g>
+              </g>
+
+              <!-- ================= CENTER TABLE SPREAD ================= -->
+              <!-- Candle Lantern with Flickering Flame -->
+              <g class="table-candle-group" transform="translate(440, 310)">
+                <rect x="-8" y="0" width="16" height="24" rx="3" fill="#1C1410" stroke="#F09A24" stroke-width="1.5"/>
+                <ellipse cx="0" cy="18" rx="5" ry="3" fill="#FAF5EE"/>
+                <!-- Flickering Flame -->
+                <path class="candle-flame" d="M0 6 C-4 2, -3 -6, 0 -12 C3 -6, 4 2, 0 6 Z" fill="#FFA502" filter="url(#candleGlowEffect)"/>
+                <circle cx="0" cy="-2" r="18" fill="rgba(240, 154, 36, 0.35)" filter="url(#candleGlowEffect)"/>
+              </g>
+
+              <!-- Central Sizzling Dolsot Bibimbap Stone Bowl -->
+              <g transform="translate(390, 335)">
+                <ellipse cx="25" cy="24" rx="32" ry="12" fill="#120E0C" stroke="#2B201A" stroke-width="3"/>
+                <!-- Steaming Stone Rim -->
+                <ellipse cx="25" cy="22" rx="28" ry="9" fill="#E25822" stroke="#F09A24" stroke-width="1.5"/>
+                <circle cx="25" cy="22" r="6" fill="#F1C40F"/> <!-- Egg yolk -->
+                <!-- Rising Dolsot Steam -->
+                <path class="steam-drift-path s-dolsot1" d="M16 16 Q10 2 20 -14 Q30 -28 22 -44" stroke="rgba(255, 230, 190, 0.85)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <path class="steam-drift-path s-dolsot2" d="M32 16 Q38 4 28 -12 Q18 -26 26 -40" stroke="rgba(240, 154, 36, 0.75)" stroke-width="2" stroke-linecap="round" fill="none"/>
+              </g>
+
+              <!-- Bamboo Steamer Basket with Ragi Momos -->
+              <g transform="translate(485, 335)">
+                <ellipse cx="25" cy="24" rx="28" ry="10" fill="#6B4B35" stroke="#8C6246" stroke-width="2.5"/>
+                <ellipse cx="25" cy="20" rx="25" ry="8" fill="#4A3425"/>
+                <!-- Ragi Dumpling Silhouettes -->
+                <ellipse cx="16" cy="20" rx="6" ry="4" fill="#7A4E38" stroke="#3D2418" stroke-width="1"/>
+                <ellipse cx="25" cy="18" rx="6" ry="4" fill="#7A4E38" stroke="#3D2418" stroke-width="1"/>
+                <ellipse cx="34" cy="20" rx="6" ry="4" fill="#7A4E38" stroke="#3D2418" stroke-width="1"/>
+                <!-- Momos Rising Steam -->
+                <path class="steam-drift-path s-momo" d="M25 14 Q32 0 24 -16 Q16 -30 25 -42" stroke="rgba(255, 240, 220, 0.8)" stroke-width="2" stroke-linecap="round" fill="none"/>
+              </g>
+
+              <!-- Side Banchan Bowls (Kimchi & Radish) -->
+              <ellipse cx="340" cy="355" rx="14" ry="6" fill="#1C1410" stroke="#C0392B" stroke-width="1.5"/>
+              <ellipse cx="560" cy="355" rx="14" ry="6" fill="#1C1410" stroke="#F5A623" stroke-width="1.5"/>
+            </svg>
+          </div>
+
+          <!-- Bottom Dining Table Metadata & Reservation Action -->
+          <div class="dining-scene-overlay-card">
+            <div class="dining-quote-block">
+              <span class="dining-quote-icon">“</span>
+              <p class="dining-quote-text">
+                At Cafe De Arte, meals are meant to be shared unhurriedly. Under Toppo House’s soft warm lights, friends reconnect, creators sketch, and soul-comfort flavors bring everyone together.
+              </p>
+            </div>
+            <div class="dining-scene-cta-group">
+              <button class="btn-primary open-reserve-modal-btn">
+                <span>Reserve Table for Two</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+              <a href="#menu" class="btn-secondary">
+                <span>Explore Shared Platters</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h4>CAFE DE ARTE</h4>
+          <p>
+            An ancestral sanctuary where Korean culinary comfort embraces the
+            indigenous tribal wisdom of Jharkhand. Housed at Toppo House, Nagra
+            Toli, Ranchi.
+          </p>
+          <p
+            style="
+              margin-top: 14px;
+              color: var(--amber);
+              font-size: 0.85rem;
+              font-weight: 600;
+            "
+          >
+            Affiliated with Mandi Eddpa & Tribe Tree
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="#home">Home Experience</a></li>
+            <li><a href="#story">Our Heritage</a></li>
+            <li><a href="#menu">Authentic 3D Menu</a></li>
+            <li><a href="#gallery">Visual Gallery</a></li>
+            <li><a href="#location">Find Us in Ranchi</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Hours of Operation</h5>
+          <ul
+            class="footer-links"
+            style="font-size: 0.85rem; color: var(--text-muted)"
+          >
+            <li>
+              <strong>Thursday – Sunday:</strong><br />11:00 AM – 10:00 PM
+            </li>
+            <li style="margin-top: 6px">
+              <strong>Tuesday – Wednesday:</strong><br />12:00 PM – 10:00 PM
+            </li>
+            <li style="margin-top: 6px">
+              <strong>Monday:</strong><br />12:00 PM – 9:30 PM
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Visit Us</h5>
+          <p
+            style="
+              font-size: 0.88rem;
+              color: var(--text-muted);
+              line-height: 1.6;
+              margin-bottom: 12px;
+            "
+          >
+            Shop No. 1, S.N. Yadav Road,<br />Near Toppo House, Nagra Toli,<br />Lalpur,
+            Ranchi, Jharkhand 834001
+          </p>
+          <p
+            style="
+              font-size: 0.88rem;
+              color: var(--amber-light);
+              font-weight: 600;
+            "
+          >
+            <a href="tel:+918336070979">+91 83360 70979</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Cafe De Arte (Toppo House, Ranchi). All rights reserved.
+        </p>
+        <p>Premium 3D Demo Concept • Ready for Vercel Static Deployment</p>
+      </div>
+    </footer>
+ 
+    <!-- Main JavaScript Controller -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
