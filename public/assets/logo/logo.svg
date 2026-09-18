@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" width="600" height="160">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7D070"/>
+      <stop offset="50%" stop-color="#E59838"/>
+      <stop offset="100%" stop-color="#C85A32"/>
+    </linearGradient>
+    <linearGradient id="terracottaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C85A32"/>
+      <stop offset="100%" stop-color="#E59838"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Left Artistic Icon: Artisan Bowl & Brushstroke Steam -->
+  <g transform="translate(10, 10)">
+    <!-- Outer decorative heritage halo -->
+    <circle cx="70" cy="70" r="62" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="4 6" opacity="0.6"/>
+    <circle cx="70" cy="70" r="54" fill="#FFF8F0" stroke="#E25822" stroke-width="2"/>
+
+    <!-- Indigenous Tribal Motifs (Sohrai / Khovar inspired dot & spiral geometry) -->
+    <circle cx="70" cy="24" r="2.5" fill="#E59838"/>
+    <circle cx="116" cy="70" r="2.5" fill="#E59838"/>
+    <circle cx="70" cy="116" r="2.5" fill="#E59838"/>
+    <circle cx="24" cy="70" r="2.5" fill="#E59838"/>
+
+    <!-- Artisan Bowl (Symbolizing Korean Ramyeon & Bibimbap Dolsot) -->
+    <path d="M42 74 C42 98, 98 98, 98 74 Z" fill="url(#terracottaGrad)" />
+    <!-- Bowl rim line -->
+    <path d="M38 73 Q70 77 102 73" stroke="#F7D070" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <!-- Bowl pedestal base -->
+    <path d="M57 97 L83 97 L80 103 L60 103 Z" fill="#9E3D1B"/>
+
+    <!-- Rising Steam / Artistic Brushstrokes & Chopsticks -->
+    <!-- Chopsticks crossing subtly in 3D perspective -->
+    <line x1="44" y1="46" x2="94" y2="76" stroke="#D6CEC2" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+    <line x1="50" y1="42" x2="98" y2="74" stroke="#D6CEC2" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+
+    <!-- Fluid dynamic steam swirls like calligraphic paint -->
+    <path d="M60 65 Q54 50 63 40 T60 26" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#glow)"/>
+    <path d="M72 65 Q79 48 70 36 T75 22" fill="none" stroke="#F7D070" stroke-width="2" stroke-linecap="round"/>
+    <path d="M82 66 Q88 54 83 44 T86 32" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- Small artistic star/sparkle -->
+    <path d="M70 16 L72 20 L76 22 L72 24 L70 28 L68 24 L64 22 L68 20 Z" fill="#F7D070"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(160, 0)">
+    <!-- Pre-title / Tagline -->
+    <text x="0" y="44" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="13" font-weight="600" letter-spacing="7" fill="#E59838">
+      KOREAN SOUL • INDIGENOUS ROOTS
+    </text>
+
+    <!-- Main Title: CAFE DE ARTE -->
+    <text x="0" y="98" font-family="'Cinzel', 'Playfair Display', 'Times New Roman', serif" font-size="52" font-weight="700" letter-spacing="4" fill="#231C16">
+      CAFE DE ARTE
+    </text>
+
+    <!-- Artistic decorative divider line -->
+    <line x1="0" y1="114" x2="380" y2="114" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="190" cy="114" r="3.5" fill="#F7D070"/>
+    <polygon points="190,109 194,114 190,119 186,114" fill="#C85A32"/>
+
+    <!-- Subtitle: Location & Heritage -->
+    <text x="0" y="136" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="12" font-weight="500" letter-spacing="4" fill="#A89F91">
+      TOPPO HOUSE • NAGRA TOLI • RANCHI
+    </text>
+  </g>
+</svg>

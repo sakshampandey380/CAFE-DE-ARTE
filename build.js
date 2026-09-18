@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const root = __dirname;
-const targets = ['dist', 'build'];
+const targets = ['public', 'dist', 'build'];
 
 function copyRecursive(src, dest) {
   if (!fs.existsSync(src)) return;
@@ -25,7 +25,7 @@ function copyRecursive(src, dest) {
   }
 }
 
-// Populate both dist/ and build/ with the static assets
+// Populate public/, dist/, and build/ directories with static assets
 for (const target of targets) {
   const targetDir = path.join(root, target);
   if (!fs.existsSync(targetDir)) {
