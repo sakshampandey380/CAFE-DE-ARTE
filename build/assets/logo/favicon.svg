@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <defs>
+    <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE4A6"/>
+      <stop offset="60%" stop-color="#E59838"/>
+      <stop offset="100%" stop-color="#C85A32"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#14110F" stroke="#C85A32" stroke-width="2"/>
+  <!-- Bowl -->
+  <path d="M16 34 C16 50, 48 50, 48 34 Z" fill="url(#favGrad)" />
+  <ellipse cx="32" cy="34" rx="16" ry="2.5" fill="#3D291F" stroke="#FCE4A6" stroke-width="1"/>
+  <!-- Steam -->
+  <path d="M28 30 Q23 22 28 16 T27 10" fill="none" stroke="#FCE4A6" stroke-width="2" stroke-linecap="round"/>
+  <path d="M36 30 Q41 22 36 16 T37 10" fill="none" stroke="#E59838" stroke-width="2" stroke-linecap="round"/>
+  <!-- Star -->
+  <circle cx="32" cy="7" r="1.5" fill="#FCE4A6"/>
+</svg>

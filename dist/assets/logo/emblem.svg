@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <radialGradient id="emblemBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#241B17"/>
+      <stop offset="70%" stop-color="#14110F"/>
+      <stop offset="100%" stop-color="#0A0807"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE4A6"/>
+      <stop offset="50%" stop-color="#E59838"/>
+      <stop offset="100%" stop-color="#C85A32"/>
+    </linearGradient>
+    <linearGradient id="terracottaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C85A32"/>
+      <stop offset="50%" stop-color="#E59838"/>
+      <stop offset="100%" stop-color="#F5A623"/>
+    </linearGradient>
+    <filter id="emblemGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="150" cy="150" r="142" fill="url(#emblemBg)" stroke="#C85A32" stroke-width="2"/>
+  <circle cx="150" cy="150" r="134" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="3 5"/>
+  <circle cx="150" cy="150" r="126" fill="none" stroke="#3D291F" stroke-width="1"/>
+
+  <!-- Concentric Indigenous Motifs (Jharkhand Sohrai pattern) -->
+  <g opacity="0.4" stroke="#E59838" stroke-width="1" fill="none">
+    <circle cx="150" cy="150" r="114"/>
+    <circle cx="150" cy="150" r="102" stroke-dasharray="2 6"/>
+  </g>
+
+  <!-- Circular Curving Text -->
+  <path id="textCircleTop" d="M 45,150 A 105,105 0 0,1 255,150" fill="none"/>
+  <text font-family="'Cinzel', Georgia, serif" font-size="14" font-weight="700" letter-spacing="7" fill="#FCE4A6">
+    <textPath href="#textCircleTop" startOffset="50%" text-anchor="middle">
+      CAFE DE ARTE
+    </textPath>
+  </text>
+
+  <path id="textCircleBottom" d="M 255,150 A 105,105 0 0,1 45,150" fill="none"/>
+  <text font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" letter-spacing="4" fill="#A89F91">
+    <textPath href="#textCircleBottom" startOffset="50%" text-anchor="middle">
+      TOPPO HOUSE • RANCHI
+    </textPath>
+  </text>
+
+  <!-- Central Emblem: Sacred Artisan Dolsot Bowl & Swirling Steam -->
+  <g transform="translate(0, 0)">
+    <!-- Aura Glow behind bowl -->
+    <circle cx="150" cy="158" r="45" fill="#E59838" opacity="0.15" filter="url(#emblemGlow)"/>
+
+    <!-- Bowl Silhouette -->
+    <path d="M102 160 C102 196, 198 196, 198 160 Z" fill="url(#terracottaGrad)" stroke="#1A1614" stroke-width="2"/>
+    <!-- Bowl Rim Highlight -->
+    <ellipse cx="150" cy="159" rx="49" ry="6" fill="#2C1B14" stroke="#FCE4A6" stroke-width="2.5"/>
+    <ellipse cx="150" cy="159" rx="43" ry="3.5" fill="#C85A32"/>
+
+    <!-- Bowl Base Foot -->
+    <path d="M125 194 L175 194 L171 202 L129 202 Z" fill="#7D280B"/>
+
+    <!-- Dynamic Chopsticks angled across in 3D -->
+    <line x1="108" y1="126" x2="188" y2="164" stroke="#F5F2EB" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+    <line x1="116" y1="120" x2="194" y2="160" stroke="#D6CEC2" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+
+    <!-- Steam Swirls Rising -->
+    <path d="M136 148 Q124 126 138 108 T134 82" fill="none" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round" filter="url(#emblemGlow)"/>
+    <path d="M152 148 Q164 122 150 102 T156 74" fill="none" stroke="#FCE4A6" stroke-width="2.8" stroke-linecap="round"/>
+    <path d="M166 149 Q178 130 170 114 T174 92" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- North Star / Sparkle of Inspiration -->
+    <path d="M150 58 L153 66 L161 69 L153 72 L150 80 L147 72 L139 69 L147 66 Z" fill="#FCE4A6"/>
+  </g>
+</svg>

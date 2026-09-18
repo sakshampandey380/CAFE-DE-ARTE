@@ -4,7 +4,7 @@
   "private": true,
   "description": "Cafe De Arte — Korean Soul & Indigenous Roots, Ranchi",
   "scripts": {
-    "build": "echo 'Static site ready for deployment'",
+    "build": "node build.js",
     "start": "npx serve ."
   },
   "keywords": [
