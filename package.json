@@ -1,0 +1,18 @@
+{
+  "name": "cafe-de-arte",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cafe De Arte — Korean Soul & Indigenous Roots, Ranchi",
+  "scripts": {
+    "build": "echo 'Static site ready for deployment'",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "cafe-de-arte",
+    "ranchi",
+    "korean-cafe",
+    "toppo-house"
+  ],
+  "author": "Cafe De Arte",
+  "license": "ISC"
+}

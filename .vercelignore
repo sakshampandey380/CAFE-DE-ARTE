@@ -1,0 +1,5 @@
+preview_*.png
+test_*.png
+*.log
+.system_generated/
+scratch/
